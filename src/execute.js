@@ -420,7 +420,7 @@ export function applySecurities({request, securities = {}, operation = {}, spec}
           }
         }
         else if (type === 'oauth2') {
-          result.headers.authorization = `${tokenType || 'Bearer'} ${accessToken}`
+          result.headers['Authorization'] = `${tokenType.charAt(0).toUpperCase() + tokenType.slice(1) || 'Bearer'} ${accessToken}`
         }
       }
     }
